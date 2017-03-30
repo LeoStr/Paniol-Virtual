@@ -55,4 +55,8 @@ class User implements Serializable {
     static mapping = {
         password column: '`password`'
     }
+    
+    String toString(){
+        return nombre + " " + apellido
+    }
 }
