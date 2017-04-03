@@ -9,24 +9,24 @@ class ItemController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Item.list(params), model:[itemCount: Item.count()]
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def show(Item item) {
         respond item
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def create() {
         respond new Item(params)
     }
 
     @Transactional
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def save(Item item) {
         if (item == null) {
             transactionStatus.setRollbackOnly()
@@ -51,13 +51,13 @@ class ItemController {
         }
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def edit(Item item) {
         respond item
     }
 
     @Transactional
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def update(Item item) {
         if (item == null) {
             transactionStatus.setRollbackOnly()
@@ -83,7 +83,7 @@ class ItemController {
     }
 
     @Transactional
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     def delete(Item item) {
 
         if (item == null) {
@@ -103,7 +103,7 @@ class ItemController {
         }
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN'])
     protected void notFound() {
         request.withFormat {
             form multipartForm {

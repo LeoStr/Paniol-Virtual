@@ -6,6 +6,7 @@ class Item {
     String nombre
     User dueño
     String ubicacion
+    Long cantidad
     
     static constraints = {
     }
