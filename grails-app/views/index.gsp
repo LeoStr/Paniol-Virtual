@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <title>Pañol Virtual</title>
+        <title>Pañol</title>
         <style type="text/css" media="screen">
             #status {
             background-color: #eee;
@@ -192,7 +192,7 @@
         <div id="page-body" role="main">
         </div-->
         <div class="pagina">
-            <div id="welcome">Pañol Virtual</div>
+            <div id="welcome">Pañol</div>
             <div id="slogan">Inventario</div>
             <div class="contenedor"> 
                 <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
