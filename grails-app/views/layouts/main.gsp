@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#">
+                <a class="navbar-brand" href="/Paniol-Virtual`">
                     <i class="fa grails-icon">
                         <asset:image src="pañol.png"/>
                     </i> Pañol Virtual
