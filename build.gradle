@@ -10,7 +10,6 @@ buildscript {
     }
 }
 
-version "0.1"
 group "paniolvirtual"
 
 apply plugin:"eclipse"
