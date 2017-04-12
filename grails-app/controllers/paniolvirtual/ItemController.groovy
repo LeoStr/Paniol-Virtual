@@ -12,7 +12,10 @@ class ItemController {
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Item.list(params), model:[itemCount: Item.count()]
+        String dueño = session.SPRING_SECURITY_CONTEXT.getAuthentication().getPrincipal().getUsername()
+        User usuario = User.findByUsername(dueño)
+        List lista = Item.findAllByDuenio(usuario)
+        respond lista, model:[itemCount: lista.size()]
     }
 
     @Secured(['ROLE_ADMIN'])

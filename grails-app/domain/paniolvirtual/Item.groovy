@@ -4,7 +4,7 @@ class Item {
     
     Long id
     String nombre
-    User dueño
+    User duenio
     String ubicacion
     Long cantidad
     
