@@ -9,11 +9,15 @@ class ItemController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    @Secured(['ROLE_ADMIN'])
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         String dueño = session.SPRING_SECURITY_CONTEXT.getAuthentication().getPrincipal().getUsername()
         User usuario = User.findByUsername(dueño)
+        Role role = Role.findByAuthority('ROLE_ADMIN')
+        if(usuario.getAuthorities().contains(role)){
+            respond Item.list(params), model:[itemCount: Item.count()]
+        }
         List lista = Item.findAllByDuenio(usuario)
         respond lista, model:[itemCount: lista.size()]
     }
