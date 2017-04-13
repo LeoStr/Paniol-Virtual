@@ -200,10 +200,7 @@
                         <g:link controller="${c.logicalPropertyName}">
                             <div class="tile color4">
                                 <br/> 
-                                <br/> 
-                                <br/> 
                                 <span class="titulo">Items</span>
-                                <br/> 
                                 <br/> 
                             </div> 
                         </g:link>
