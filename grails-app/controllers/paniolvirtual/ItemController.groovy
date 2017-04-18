@@ -17,9 +17,10 @@ class ItemController {
         Role role = Role.findByAuthority('ROLE_ADMIN')
         if(usuario.getAuthorities().contains(role)){
             respond Item.list(params), model:[itemCount: Item.count()]
+        } else{
+            List lista = Item.findAllByDuenio(usuario)
+            respond lista, model:[itemCount: lista.size()]
         }
-        List lista = Item.findAllByDuenio(usuario)
-        respond lista, model:[itemCount: lista.size()]
     }
 
     @Secured(['ROLE_ADMIN'])
