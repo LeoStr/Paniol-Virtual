@@ -177,6 +177,18 @@ img {
     background-color: #4D8618;
 }
 
+#logout {
+    float: right;
+    margin-left: 3em
+}
+
+.nav a.logout {
+    background-image: url(../images/skin/shutdown.png);
+    background-position: 0em center;
+    background-repeat: no-repeat;
+    text-indent: 0.8em;
+}
+
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
 fieldset,
