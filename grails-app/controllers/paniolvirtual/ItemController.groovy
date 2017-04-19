@@ -8,6 +8,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class ItemController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def filterPaneService
 
     @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index(Integer max) {
@@ -21,6 +22,16 @@ class ItemController {
             List lista = Item.findAllByDuenio(usuario)
             respond lista, model:[itemCount: lista.size()]
         }
+    }
+    
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
+    def filter() {
+        if(!params.max) params.max = 10
+        render( view:'index',
+            model:[ itemList: filterPaneService.filter( params, Item ),
+                itemCount: filterPaneService.count( params, Item ),
+                filterParams: org.grails.plugins.filterpane.FilterPaneUtils.extractFilterParams(params),
+                params:params ] )
     }
 
     @Secured(['ROLE_ADMIN'])

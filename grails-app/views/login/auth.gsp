@@ -41,7 +41,7 @@
 	}
 
 	#login .inner .cssform input[type="text"] {
-		width: 120px;
+		width: 180px;
 	}
 
 	#login .inner .cssform label {
@@ -49,17 +49,17 @@
 		float: left;
 		text-align: right;
 		margin-left: -105px;
-		width: 110px;
+		width: 160px;
 		padding-top: 3px;
 		padding-right: 10px;
 	}
 
 	#login #remember_me_holder {
-		padding-left: 120px;
+		padding-left: 123px;
 	}
 
 	#login #submit {
-		margin-left: 15px;
+		margin-left: 30px;
 	}
 
 	#login #remember_me_holder label {
@@ -75,7 +75,7 @@
 	}
 
 	#login .inner .text_ {
-		width: 120px;
+		width: 180px;
 	}
 
 	#login .inner .chk {
