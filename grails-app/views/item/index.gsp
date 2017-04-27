@@ -16,7 +16,7 @@
             <li id="logout"><a class="logout" href="${createLink(uri: '/logoff')}"><g:message code="default.logout.label" args="[entityName]" /></a></li>
             </ul>
         </div>
-        <filterpane:filterButton text="Filtrar"  appliedText="Modificar Filtro"/>
+        <filterpane:filterButton text="Filtrar"  appliedText="Modificar Filtro" class="filterbutton"/>
         <filterpane:filterPane domain="Item" />
         <div id="list-item" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>

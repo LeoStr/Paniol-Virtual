@@ -10,4 +10,8 @@ class Item {
     
     static constraints = {
     }
+    
+    def String toString() {
+        duenio?.getNombre() + " " + duenio?.getApellido()
+    }
 }

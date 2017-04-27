@@ -6,7 +6,7 @@ import paniolvirtual.UserRole
 
 class BootStrap {
     def init = { servletContext ->
-        /* //Armamos un usuario
+        /* /Armamos un usuario
         //def adminRole = new Role(authority: 'ROLE_ADMIN').save()
         //def userRole = new Role(authority: 'ROLE_USER').save()
         def role = Role.findByAuthority('ROLE_USER')

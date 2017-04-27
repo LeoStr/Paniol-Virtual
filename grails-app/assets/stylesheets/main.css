@@ -189,6 +189,17 @@ img {
     text-indent: 0.8em;
 }
 
+/* FILTER STYLES */
+
+.filterbutton {
+    padding: 20px;
+}
+
+.filterpane {
+    padding: 20px;
+}
+
+
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
 fieldset,
