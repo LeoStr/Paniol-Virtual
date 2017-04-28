@@ -1,3 +1,4 @@
+<%@ page import="paniolvirtual.User" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +18,8 @@
             </ul>
         </div>
         <filterpane:filterButton text="Filtrar"  appliedText="Modificar Filtro" class="filterbutton"/>
-        <filterpane:filterPane domain="Item" />
+        <filterpane:isFiltered>Filtrado</filterpane:isFiltered>
+        <filterpane:filterPane domain="paniolvirtual.Item" associatedProperties="duenio.nombre,duenio.apellido" filterPropertyValues="${[duenio: [User.list()]]}"/>
         <div id="list-item" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
