@@ -207,6 +207,19 @@
                     </g:if>
                 </g:each> 
             </div>
+            <div class="contenedor"> 
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                    <g:if test = "${c.name == 'Deposito'}">
+                        <g:link controller="${c.logicalPropertyName}">
+                            <div class="tile color2">
+                                <br/> 
+                                <span class="titulo">Deposito</span>
+                                <br/> 
+                            </div> 
+                        </g:link>
+                    </g:if>
+                </g:each> 
+            </div>
         </div>
     </body>
 </html>
